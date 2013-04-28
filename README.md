@@ -1,9 +1,9 @@
-LLML
+Litl
 ====
 
-Lisp-like Markup Language
+Lisp-inspired Templating Language
 
-LLML is an experimental templating language with a lisp-like syntax. It
+Litl is an experimental templating language with a lisp-like syntax. It
 has grown from an increasing frustration with HAML, particularly its
 use of significant whitespace and the effect that has on the ability to
 wrap long lines elegantly and to resolve merge conflicts.
