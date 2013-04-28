@@ -21,3 +21,22 @@ Examples
            that needs to be interpreted as a string, although I don't know
            if that will be done without quotes, or using single, double or
            triple double quotes.)))
+
+## Installation
+
+Add this line to your application's Gemfile:
+
+    gem 'litl'
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install litl
+
+## Contributing
+
+You can contribute to Litl by sending me a bug report or a pull request.
+Pull requests should include tests.
