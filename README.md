@@ -1,5 +1,4 @@
-Litl
-====
+# Litl
 
 Lisp-inspired Templating Language
 
@@ -8,8 +7,7 @@ has grown from an increasing frustration with HAML, particularly its
 use of significant whitespace and the effect that has on the ability to
 wrap long lines elegantly and to resolve merge conflicts.
 
-Examples
---------
+## Examples
 
     (html
       (head
