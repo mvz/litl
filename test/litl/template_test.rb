@@ -9,13 +9,8 @@ describe Litl::Template do
   it "handles a simple static HTML example" do
     src = "(html (h1 Foo) (p Foo bar bar))"
 
-    expected = <<-END
-    <html>
-      <h1>Foo</h1>
-      <p>Foo bar bar</p>
-    </html>
-    END
+    expected = "<html><h1>Foo</h1><p>Foo bar bar</p></html>"
 
-    rendered_result(src).must_equal expected.reset_indentation
+    rendered_result(src).must_equal expected
   end
 end
