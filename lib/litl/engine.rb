@@ -5,11 +5,11 @@ module Litl
   class Engine < Temple::Engine
     use Parser
 
+    use Temple::HTML::Fast
+
     filter :MultiFlattener
     filter :StaticMerger
     filter :DynamicInliner
-
-    use Temple::HTML::Pretty
 
     generator :ArrayBuffer
   end
