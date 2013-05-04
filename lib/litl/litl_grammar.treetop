@@ -1,0 +1,21 @@
+grammar LitlGrammar
+  rule expression
+    space? '(' identifier body ')' space? <Expression>
+  end
+
+  rule identifier
+    [a-zA-Z] [a-zA-Z0-9]* <Identifier>
+  end
+
+  rule space
+    [\s]+
+  end
+
+  rule body
+    (expression / literal / space)* <Body>
+  end
+
+  rule literal
+    identifier (space identifier)* <Literal>
+  end
+end
