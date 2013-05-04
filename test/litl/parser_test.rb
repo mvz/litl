@@ -11,8 +11,9 @@ describe Litl::Parser do
     src = "(html (h1 Foo) (p Foo bar bar))"
 
     expected = [:html, :tag, 'html', [:html, :attrs],
-                [:html, :tag, 'h1', [:html, :attrs], [:static, 'Foo']],
-                [:html, :tag, 'p', [:html, :attrs], [:static, 'Foo bar bar']]]
+                [:multi,
+                 [:html, :tag, 'h1', [:html, :attrs], [:static, 'Foo']],
+                 [:html, :tag, 'p', [:html, :attrs], [:static, 'Foo bar bar']]]]
 
     Litl::Parser.new.call(src).must_equal expected
   end

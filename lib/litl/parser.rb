@@ -15,10 +15,17 @@ module LitlGrammar
 
   class Expression < Treetop::Runtime::SyntaxNode
     def to_sexp
-      contents = elements.map do |elem|
-        elem.to_sexp
+      tagname = elements.first.to_sexp
+      body = elements.last.to_sexp
+
+      case body.size
+      when 0
+        [:html, :tag, tagname, [:html, :attrs]]
+      when 1
+        [:html, :tag, tagname, [:html, :attrs], body.first]
+      else
+        [:html, :tag, tagname, [:html, :attrs], [:multi, *body]]
       end
-      [:html, :tag, contents.first, [:html, :attrs], *contents.last]
     end
   end
 
