@@ -15,6 +15,12 @@ module LitlGrammar
 
   class Expression < Treetop::Runtime::SyntaxNode
     def to_sexp
+      elements.first.to_sexp
+    end
+  end
+
+  class TagExpression < Treetop::Runtime::SyntaxNode
+    def to_sexp
       tagname = elements.first.to_sexp
       body = elements.last.to_sexp
 
@@ -27,6 +33,15 @@ module LitlGrammar
         [:html, :tag, tagname, [:html, :attrs], [:multi, *body]]
       end
     end
+  end
+
+  class DynamicExpression < Treetop::Runtime::SyntaxNode
+    def to_sexp
+      [:dynamic, elements.first.text_value]
+    end
+  end
+
+  class Code < Treetop::Runtime::SyntaxNode
   end
 
   class Body < Treetop::Runtime::SyntaxNode

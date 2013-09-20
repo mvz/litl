@@ -1,6 +1,14 @@
 grammar LitlGrammar
   rule expression
-    space? '(' identifier body ')' space? <Expression>
+    space? (dynamic_expression / tag_expression) space? <Expression>
+  end
+
+  rule tag_expression
+    '(' identifier body ')' <TagExpression>
+  end
+
+  rule dynamic_expression
+    '(=' space* code space* '.)' <DynamicExpression>
   end
 
   rule identifier
@@ -17,5 +25,9 @@ grammar LitlGrammar
 
   rule literal
     identifier (space identifier)* <Literal>
+  end
+
+  rule code
+    [@] [a-zA-Z] [a-zA-Z0-9]* <Code>
   end
 end

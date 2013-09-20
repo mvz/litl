@@ -17,4 +17,12 @@ describe Litl::Parser do
 
     Litl::Parser.new.call(src).must_equal expected
   end
+
+  it "handles a simple expression" do
+    src = "(= @foo .)"
+
+    expected = [:dynamic, "@foo"]
+
+    Litl::Parser.new.call(src).must_equal expected
+  end
 end
