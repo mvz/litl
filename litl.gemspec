@@ -21,9 +21,9 @@ Gem::Specification.new do |s|
   s.add_development_dependency('minitest', ["~> 5.3"])
   s.add_development_dependency('indentation')
 
-  s.add_runtime_dependency('tilt')
-  s.add_runtime_dependency('temple')
-  s.add_runtime_dependency('treetop')
+  s.add_runtime_dependency('tilt', '~> 2.0')
+  s.add_runtime_dependency('temple', '~> 0.8.0')
+  s.add_runtime_dependency('treetop', '~> 1.6')
 
   s.require_paths = ["lib"]
 end
