@@ -16,7 +16,6 @@ Gem::Specification.new do |s|
   s.files = `git ls-files`.split($/)
   s.test_files = s.files.grep(%r{^test/})
 
-  s.add_development_dependency("bundler", "~> 1.3")
   s.add_development_dependency("rake")
   s.add_development_dependency('minitest', ["~> 5.3"])
   s.add_development_dependency('indentation')
