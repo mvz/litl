@@ -1,5 +1,7 @@
-require 'minitest/autorun'
+# frozen_string_literal: true
 
-require 'indentation'
+require "minitest/autorun"
 
-require 'litl'
+require "indentation"
+
+require "litl"

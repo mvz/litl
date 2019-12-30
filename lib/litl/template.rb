@@ -1,7 +1,9 @@
-require 'tilt'
-require 'temple'
-require 'litl/engine'
+# frozen_string_literal: true
+
+require "tilt"
+require "temple"
+require "litl/engine"
 
 module Litl
-  Template = Temple::Templates::Tilt(Engine, register_as: 'litl')
+  Template = Temple::Templates::Tilt(Engine, register_as: "litl")
 end

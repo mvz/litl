@@ -1,12 +1,14 @@
-require 'rake/clean'
-require 'bundler/gem_tasks'
+# frozen_string_literal: true
 
-require 'rake/testtask'
+require "rake/clean"
+require "bundler/gem_tasks"
+
+require "rake/testtask"
 
 Rake::TestTask.new do |t|
-  t.libs = ['lib']
+  t.libs = ["lib"]
   t.ruby_opts += ["-w -Itest"]
-  t.test_files = FileList['test/**/*_test.rb']
+  t.test_files = FileList["test/**/*_test.rb"]
 end
 
-task :default => [:test]
+task default: [:test]
