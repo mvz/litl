@@ -1,8 +1,10 @@
-require 'test_helper'
+# frozen_string_literal: true
+
+require "test_helper"
 
 # These are basically integration tests
 describe Litl::Template do
-  def rendered_result source
+  def rendered_result(source)
     Litl::Template.new { source }.render
   end
 

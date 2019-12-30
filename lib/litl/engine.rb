@@ -1,5 +1,7 @@
-require 'litl/parser'
-require 'temple/html/pretty'
+# frozen_string_literal: true
+
+require "litl/parser"
+require "temple/html/pretty"
 
 module Litl
   class Engine < Temple::Engine
