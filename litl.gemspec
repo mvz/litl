@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.homepage = ""
   s.license = "MIT"
 
-  s.files = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
+  s.files = `git ls-files -z`.split("\0")
   s.test_files = s.files.grep(%r{^test/})
 
   s.add_development_dependency("indentation")
