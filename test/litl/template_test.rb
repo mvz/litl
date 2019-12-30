@@ -13,6 +13,6 @@ describe Litl::Template do
 
     expected = "<html><h1>Foo</h1><p>Foo bar bar</p></html>"
 
-    rendered_result(src).must_equal expected
+    _(rendered_result(src)).must_equal expected
   end
 end

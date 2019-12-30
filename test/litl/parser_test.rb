@@ -6,7 +6,7 @@ describe Litl::Parser do
   it "handles a very simple HTML example" do
     src = "(br)"
 
-    Litl::Parser.new.call(src).must_equal [:html, :tag, "br", [:html, :attrs]]
+    _(Litl::Parser.new.call(src)).must_equal [:html, :tag, "br", [:html, :attrs]]
   end
 
   it "handles a simple HTML example" do
@@ -17,6 +17,6 @@ describe Litl::Parser do
                  [:html, :tag, "h1", [:html, :attrs], [:static, "Foo"]],
                  [:html, :tag, "p", [:html, :attrs], [:static, "Foo bar bar"]]]]
 
-    Litl::Parser.new.call(src).must_equal expected
+    _(Litl::Parser.new.call(src)).must_equal expected
   end
 end

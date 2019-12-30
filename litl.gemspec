@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.test_files = s.files.grep(%r{^test/})
 
   s.add_development_dependency("indentation")
-  s.add_development_dependency("minitest", ["~> 5.3"])
+  s.add_development_dependency("minitest", ["~> 5.6"])
   s.add_development_dependency("rake")
 
   s.add_runtime_dependency("temple", "~> 0.8.0")
