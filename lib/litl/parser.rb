@@ -50,7 +50,7 @@ module Litl
 
     def clean_tree(tree)
       if tree.elements
-        tree.elements.delete_if { |el| el.class == Treetop::Runtime::SyntaxNode }
+        tree.elements.delete_if { |el| el.instance_of?(Treetop::Runtime::SyntaxNode) }
         tree.elements.each { |el| clean_tree el }
       end
       tree
