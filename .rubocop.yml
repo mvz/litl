@@ -1,7 +1,9 @@
 inherit_from: .rubocop_todo.yml
 
 require:
+  - rubocop-minitest
   - rubocop-performance
+  - rubocop-rake
 
 AllCops:
   Exclude:
@@ -33,6 +35,10 @@ Layout/SpaceBeforeBlockBraces:
 
 # Assume the programmer knows how bracketed block syntax works
 Lint/AmbiguousBlockAssociation:
+  Enabled: false
+
+# Assume the programmer knows precendence rules
+Lint/AmbiguousOperatorPrecedence:
   Enabled: false
 
 # Allow if (foo = get_foo) style
