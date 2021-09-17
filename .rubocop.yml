@@ -61,10 +61,6 @@ Metrics/BlockLength:
 Performance/StartWith:
   AutoCorrect: true
 
-# Allow and/or for control flow only
-Style/AndOr:
-  EnforcedStyle: conditionals
-
 # Require at least two dependent lines before suggesting a guard clause
 Style/GuardClause:
   MinBodyLength: 2
