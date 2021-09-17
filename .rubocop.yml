@@ -1,7 +1,9 @@
 inherit_from: .rubocop_todo.yml
 
 require:
+  - rubocop-minitest
   - rubocop-performance
+  - rubocop-rake
 
 AllCops:
   Exclude:
@@ -9,13 +11,17 @@ AllCops:
   NewCops: enable
   TargetRubyVersion: 2.7
 
+# Add line break so element indentation will match with standardrb
+Layout/FirstArrayElementLineBreak:
+  Enabled: true
+
+# Add line break so argument indentation will match with standardrb
+Layout/FirstMethodArgumentLineBreak:
+  Enabled: true
+
 # Be lenient with line length
 Layout/LineLength:
   Max: 92
-
-# Don't force lonely closing parentheses
-Layout/MultilineMethodCallBraceLayout:
-  EnforcedStyle: same_line
 
 # Multi-line method calls should be simply indented. Aligning them makes it
 # even harder to keep a sane line length.
@@ -31,8 +37,17 @@ Layout/MultilineOperationIndentation:
 Layout/SpaceBeforeBlockBraces:
   EnforcedStyleForEmptyBraces: space
 
+# Configure to match standardrb
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+  EnforcedStyleForEmptyBraces: no_space
+
 # Assume the programmer knows how bracketed block syntax works
 Lint/AmbiguousBlockAssociation:
+  Enabled: false
+
+# Assume the programmer knows precendence rules
+Lint/AmbiguousOperatorPrecedence:
   Enabled: false
 
 # Allow if (foo = get_foo) style
@@ -46,10 +61,6 @@ Metrics/BlockLength:
 Performance/StartWith:
   AutoCorrect: true
 
-# Allow and/or for control flow only
-Style/AndOr:
-  EnforcedStyle: conditionals
-
 # Require at least two dependent lines before suggesting a guard clause
 Style/GuardClause:
   MinBodyLength: 2
@@ -57,12 +68,6 @@ Style/GuardClause:
 # Sometimes an if statement just looks better than next with a guard clause
 Style/Next:
   Enabled: false
-
-# Use older RuboCop default
-Style/PercentLiteralDelimiters:
-  PreferredDelimiters:
-    '%W': ()
-    '%w': ()
 
 # Allow explicit return with multiple return values
 Style/RedundantReturn:
