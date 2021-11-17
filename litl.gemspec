@@ -15,7 +15,10 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = ">= 2.7.0"
 
+  spec.metadata["rubygems_mfa_required"] = "true"
+
   spec.files = `git ls-files -z`.split("\0")
+
   spec.test_files = spec.files.grep(%r{^test/})
   spec.require_paths = ["lib"]
 
@@ -27,7 +30,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency("minitest", ["~> 5.6"])
   spec.add_development_dependency("rake")
 
-  spec.add_development_dependency("rubocop", "~> 1.22.0")
+  spec.add_development_dependency("rubocop", "~> 1.23.0")
   spec.add_development_dependency("rubocop-minitest", "~> 0.16.0")
   spec.add_development_dependency("rubocop-performance", "~> 1.12.0")
   spec.add_development_dependency("rubocop-rake", "~> 0.6.0")
