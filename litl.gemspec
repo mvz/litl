@@ -12,14 +12,11 @@ Gem::Specification.new do |spec|
   spec.description = "Lisp-inspired Template Language"
   spec.homepage = ""
   spec.license = "MIT"
-
   spec.required_ruby_version = ">= 2.7.0"
 
   spec.metadata["rubygems_mfa_required"] = "true"
 
   spec.files = `git ls-files -z`.split("\0")
-
-  spec.test_files = spec.files.grep(%r{^test/})
   spec.require_paths = ["lib"]
 
   spec.add_runtime_dependency("temple", "~> 0.8.0")
