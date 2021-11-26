@@ -16,7 +16,7 @@ Gem::Specification.new do |spec|
 
   spec.metadata["rubygems_mfa_required"] = "true"
 
-  spec.files = `git ls-files -z`.split("\0")
+  spec.files = File.read("Manifest.txt").split
   spec.require_paths = ["lib"]
 
   spec.add_runtime_dependency "temple", "~> 0.8.0"
@@ -26,6 +26,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "indentation"
   spec.add_development_dependency "minitest", "~> 5.6"
   spec.add_development_dependency "rake"
+  spec.add_development_dependency "rake-manifest", "~> 0.2.0"
   spec.add_development_dependency "rubocop", "~> 1.23.0"
   spec.add_development_dependency "rubocop-minitest", "~> 0.17.0"
   spec.add_development_dependency "rubocop-performance", "~> 1.12.0"
