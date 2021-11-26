@@ -23,7 +23,6 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "tilt", "~> 2.0"
   spec.add_runtime_dependency "treetop", "~> 1.6"
 
-  spec.add_development_dependency "indentation"
   spec.add_development_dependency "minitest", "~> 5.6"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rake-manifest", "~> 0.2.0"
