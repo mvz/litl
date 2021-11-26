@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require "rake/clean"
 require "bundler/gem_tasks"
-
+require "rake/clean"
+require "rake/manifest/task"
 require "rake/testtask"
 
 Rake::TestTask.new do |t|
@@ -11,4 +11,9 @@ Rake::TestTask.new do |t|
   t.test_files = FileList["test/**/*_test.rb"]
 end
 
-task default: [:test]
+Rake::Manifest::Task.new do |t|
+  t.patterns = ["{lib}/**/*", "*.md"]
+end
+
+task build: ["manifest:check"]
+task default: [:test, "manifest:check"]
