@@ -21,6 +21,10 @@ Layout/FirstArrayElementLineBreak:
 Layout/FirstMethodArgumentLineBreak:
   Enabled: true
 
+# Spaces in strings with line continuations go at the beginning of the line.
+Layout/LineContinuationLeadingSpace:
+  EnforcedStyle: leading
+
 # Be lenient with line length
 Layout/LineLength:
   Max: 92
