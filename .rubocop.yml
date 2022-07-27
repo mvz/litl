@@ -6,6 +6,7 @@ inherit_mode:
 
 require:
   - rubocop-minitest
+  - rubocop-packaging
   - rubocop-performance
   - rubocop-rake
 
@@ -20,6 +21,10 @@ Layout/FirstArrayElementLineBreak:
 # Add line break so argument indentation will match with standardrb
 Layout/FirstMethodArgumentLineBreak:
   Enabled: true
+
+# Spaces in strings with line continuations go at the beginning of the line.
+Layout/LineContinuationLeadingSpace:
+  EnforcedStyle: leading
 
 # Be lenient with line length
 Layout/LineLength:
