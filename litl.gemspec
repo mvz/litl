@@ -19,9 +19,9 @@ Gem::Specification.new do |spec|
   spec.files = File.read("Manifest.txt").split
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency "temple", "~> 0.10.0"
-  spec.add_runtime_dependency "tilt", "~> 2.0"
-  spec.add_runtime_dependency "treetop", "~> 1.6"
+  spec.add_dependency "temple", "~> 0.10.0"
+  spec.add_dependency "tilt", "~> 2.0"
+  spec.add_dependency "treetop", "~> 1.6"
 
   spec.add_development_dependency "minitest", "~> 5.6"
   spec.add_development_dependency "rake", "~> 13.0"
