@@ -4,7 +4,7 @@ inherit_mode:
   merge:
     - Exclude
 
-require:
+plugins:
   - rubocop-minitest
   - rubocop-packaging
   - rubocop-performance
@@ -13,10 +13,6 @@ require:
 AllCops:
   NewCops: enable
   TargetRubyVersion: 3.2
-
-# Put development dependencies in the gemspec so rubygems.org knows about them
-Gemspec/DevelopmentDependencies:
-  EnforcedStyle: gemspec
 
 # Add line break so element indentation will match with standardrb
 Layout/FirstArrayElementLineBreak:
@@ -67,7 +63,7 @@ Lint/AssignmentInCondition:
 
 Metrics/BlockLength:
   Exclude:
-    - 'test/**/*' # Test describe blocks can be any size
+    - 'test/**/*'  # Test describe blocks can be any size
 
 Performance/StartWith:
   AutoCorrect: true
