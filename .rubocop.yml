@@ -4,7 +4,7 @@ inherit_mode:
   merge:
     - Exclude
 
-require:
+plugins:
   - rubocop-minitest
   - rubocop-packaging
   - rubocop-performance
@@ -63,7 +63,7 @@ Lint/AssignmentInCondition:
 
 Metrics/BlockLength:
   Exclude:
-    - 'test/**/*' # Test describe blocks can be any size
+    - 'test/**/*'  # Test describe blocks can be any size
 
 Performance/StartWith:
   AutoCorrect: true
