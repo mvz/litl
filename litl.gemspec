@@ -25,13 +25,4 @@ Gem::Specification.new do |spec|
   spec.add_dependency "temple", "~> 0.10.0"
   spec.add_dependency "tilt", "~> 2.0"
   spec.add_dependency "treetop", "~> 1.6"
-
-  spec.add_development_dependency "minitest", "~> 6.0"
-  spec.add_development_dependency "rake", "~> 13.0"
-  spec.add_development_dependency "rake-manifest", "~> 0.2.0"
-  spec.add_development_dependency "rubocop", "~> 1.51"
-  spec.add_development_dependency "rubocop-minitest", "~> 0.38.0"
-  spec.add_development_dependency "rubocop-packaging", "~> 0.6.0"
-  spec.add_development_dependency "rubocop-performance", "~> 1.18"
-  spec.add_development_dependency "rubocop-rake", "~> 0.7.1"
 end
