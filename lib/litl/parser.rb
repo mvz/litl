@@ -2,41 +2,10 @@
 
 require "temple/parser"
 require "treetop"
-module LitlGrammar
-  class Identifier < Treetop::Runtime::SyntaxNode
-    def to_sexp
-      text_value
-    end
-  end
-
-  class Literal < Treetop::Runtime::SyntaxNode
-    def to_sexp
-      [:static, text_value]
-    end
-  end
-
-  class Expression < Treetop::Runtime::SyntaxNode
-    def to_sexp
-      tagname = elements.first.to_sexp
-      body = elements.last.to_sexp
-
-      case body.size
-      when 0
-        [:html, :tag, tagname, [:html, :attrs]]
-      when 1
-        [:html, :tag, tagname, [:html, :attrs], body.first]
-      else
-        [:html, :tag, tagname, [:html, :attrs], [:multi, *body]]
-      end
-    end
-  end
-
-  class Body < Treetop::Runtime::SyntaxNode
-    def to_sexp
-      elements.map(&:to_sexp)
-    end
-  end
-end
+require "litl/identifier"
+require "litl/literal"
+require "litl/body"
+require "litl/expression"
 require "litl/litl_grammar"
 
 module Litl

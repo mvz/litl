@@ -1,10 +1,10 @@
 grammar LitlGrammar
   rule expression
-    space? '(' identifier body ')' space? <Expression>
+    space? '(' identifier body ')' space? <Litl::Expression>
   end
 
   rule identifier
-    [a-zA-Z] [a-zA-Z0-9]* <Identifier>
+    [a-zA-Z] [a-zA-Z0-9]* <Litl::Identifier>
   end
 
   rule space
@@ -12,10 +12,10 @@ grammar LitlGrammar
   end
 
   rule body
-    (expression / literal / space)* <Body>
+    (expression / literal / space)* <Litl::Body>
   end
 
   rule literal
-    identifier (space identifier)* <Literal>
+    identifier (space identifier)* <Litl::Literal>
   end
 end
