@@ -1,5 +1,9 @@
 lib/litl.rb
+lib/litl/body.rb
 lib/litl/engine.rb
+lib/litl/expression.rb
+lib/litl/identifier.rb
+lib/litl/literal.rb
 lib/litl/litl.treetop
 lib/litl/litl_grammar.treetop
 lib/litl/parser.rb
